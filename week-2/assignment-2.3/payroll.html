@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../../site.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+        <title>WEB 231 – Enterprise JavaScript I</title>
+    </head>
+    <body>
+        <h1 id="payroll-header">Payroll System</h1>
+        <h3>Employee record 1</h3>
+        <ul id="list">
+            <li id="txtFirstNameLudwig"></li>
+            <li id="txtLastNameBeethoven"></li>
+            <li id="txtAddressLudwig"></li>
+            <li id="txtHireDateLudwig"></li>
+            <li id="txtPayRateLudwig"></li>
+        </ul>
+        <h3>Employee record 2</h3>
+        <ul id="list">
+            <li id="txtFirstNameJohann"></li>
+            <li id="txtLastNameBach"></li>
+            <li id="txtAddressJohann"></li>
+            <li id="txtHireDateJohann"></li>
+            <li id="txtPayRateJohann"></li>
+        </ul>
+        <h4>Employee record 3</h4>
+        <ul id="list">
+            <li id="txtFirstNameWolfgang"></li>
+            <li id="txtLastNameMozart"></li>
+            <li id="txtAddressWolfgang"></li>
+            <li id="txtHireDateWolfgang"></li>
+            <li id="txtPayRateWolfgang"></li>
+        </ul>
+       </body>
+       <script>
+        /** 
+        * payroll.html
+        * Author: Brock Hemsouvanh
+        * Description: This script implements the js functions to assign dynamic data loading onto a payroll management system.
+        * By defining the structure of an employee record in JavaScript, you can easily create reusable components. 
+        * If you need to display the same kind of information in different parts of your website, you can do so by calling a 
+        * JavaScript function, rather than copying and pasting the HTML.
+        * Historically speaking, it is much more likely that Beethoven was paid the most of the three composers depicted.
+        **/
+       
+ var firstNameLudwig = "Ludwig";
+var lastNameBeethoven = "Beethoven";
+var addressLudwig = "505 main street";
+var payRateLudwig = (18.9).toFixed(1); 
+var hireDateLudwig = new Date("12/9/2020").toLocaleDateString("en-US"); 
+
+var firstNameJohann = "Johann";
+var lastNameBach = "Bach";
+var addressJohann = "512 main street";
+var payRateJohann = (25.5).toFixed(1);
+var hireDateJohann = new Date("12/9/2020").toLocaleDateString("en-US");
+
+var firstNameWolfgang = "Wolfgang";
+var lastNameMozart = "Mozart";
+var addressWolfgang = "600 main street";
+var payRateWolfgang = (50.1).toFixed(1);
+var hireDateWolfgang = new Date("12/9/2020").toLocaleDateString("en-US");
+
+document.getElementById("txtFirstNameLudwig").innerHTML = firstNameLudwig;
+document.getElementById("txtLastNameBeethoven").innerHTML = lastNameBeethoven;
+document.getElementById("txtAddressLudwig").innerHTML = addressLudwig;
+document.getElementById("txtHireDateLudwig").innerHTML = hireDateLudwig;
+document.getElementById("txtPayRateLudwig").innerHTML = payRateLudwig;
+
+document.getElementById("txtFirstNameJohann").innerHTML = firstNameJohann;
+document.getElementById("txtLastNameBach").innerHTML = lastNameBach;
+document.getElementById("txtAddressJohann").innerHTML = addressJohann;
+document.getElementById("txtHireDateJohann").innerHTML = hireDateJohann;
+document.getElementById("txtPayRateJohann").innerHTML = payRateJohann;
+
+document.getElementById("txtFirstNameWolfgang").innerHTML = firstNameWolfgang;
+document.getElementById("txtLastNameMozart").innerHTML = lastNameMozart;
+document.getElementById("txtAddressWolfgang").innerHTML = addressWolfgang;
+document.getElementById("txtHireDateWolfgang").innerHTML = hireDateWolfgang;
+document.getElementById("txtPayRateWolfgang").innerHTML = payRateWolfgang;
+</script>
+       <footer>
+        <p><a href="../../index.html" class="return-home">Return</a></p>
+    </footer>
+    </html>
