@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+        <html lang="en">
+            <head>
+                <link rel="stylesheet" href="style.css">
+                <title>Exercise 2.2 - Hello JavaScript</title>
+              </head>           
+                <body>
+                    <h2>Exercise 2.2 - Hello JavaScript</h2>
+                  <button type="button" onclick="showCourse(); document.getElementById('txtMyWorld').style.display='block'" id="btnMyCourse">
+        What course am I taking?
+                </button>
+                <script>
+                    /** 
+                    * hemsouvanhexercise2.html
+                    * Author: Brock Hemsouvanh
+                    * Description: This script implements the js button as described in:
+                    *   https://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_body
+                    **/
+                    function showCourse() {
+                        alert("WEB 231 – Enterprise JavaScript I.");
+                    }
+        
+                    function myFunction() {
+                        document.getElementById("btnMyCourse").innerHTML = "Paragraph changed.";
+                    }
+                </script>
+                <p id="txtMyWorld" style="display:none">You are now in Brock Hemsouvanh's world!</p>
+                <p><a href="../../index.html" class="return-home">Return</a></p>
+               </body>
+             </html>
+        
