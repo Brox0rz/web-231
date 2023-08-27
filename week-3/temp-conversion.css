@@ -1,4 +1,4 @@
-body {
+body, input[type="text"], button {
   font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
 }
 
@@ -8,7 +8,8 @@ footer {
   margin: 0 auto;
 }
 
-.return-home {
+.return-home,
+.return-home:visited {
   color: #4F3674;
   text-decoration: none;
 }
@@ -18,19 +19,18 @@ footer {
   color: #4F3674;
 }
 
-.return-home:visited {
-  color: #3C275A;
-}
-
-.app-header {
+.app-header, .card-title {
   text-align: center;
+  font-size: 2em;
+  color: #4F3674;
+  font-weight: 400;
 }
 
 .card-content {
-  text-align: left; 
+  text-align: left;
   font-size: 28px;
   padding: 2px 16px;
-  line-height: 2.5; 
+  line-height: 2.5;
 }
 
 #container {
@@ -45,26 +45,13 @@ footer {
   width: 55%;
 }
 
-.card-title {
-  text-align: center;
-  font-size: 2em;
-  color: #4F3674;
-  font-weight: 400;
-}
-
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-input[type="text"],
 button {
-  font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
-  text-align: left; 
-}
-
-button {
-  background-color: #4F3674; 
-  color: white; 
+  background-color: #4F3674;
+  color: white;
   border: none;
   padding: 10px 20px;
   width: 48%;
@@ -74,28 +61,22 @@ button {
 }
 
 button:hover {
-  background-color: #D6A800; 
+  background-color: #D6A800;
 }
 
-.card-content label,
-.card-content input[type="text"] {
-  width: 50%;
-  font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
-  font-size: 20px;
-}
-
+.card-content label, 
+.card-content input[type="text"],
 .card-content button {
-  display: inline-block; 
+  display: inline-block;
 }
 
 .card-content input[type="text"] {
-  width: 25%; 
+  width: 25%;
   margin-right: 10px;
   font-size: 20px;
 }
 
 #card-content {
-  font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
   text-align: center;
   font-size: 25px;
 }
