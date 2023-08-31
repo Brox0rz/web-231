@@ -11,6 +11,7 @@ header {
 }
 
 h1 {
+    color: white;
     font-weight: 400;
 }
 
@@ -196,3 +197,5 @@ footer a:hover {
   text-align: center;
   font-size: 25px;
 }
+
+/*new update test*/
