@@ -63,23 +63,15 @@ h1 {
 }
 
 footer {
-    background-color: #4F3674;
-    /* position: absolute; */
     bottom: 0;
-    width: 100%;
-
-    /* Assignment 9.2 styles */
-    position: fixed;
+    width: 50%;
     left: 0;
 }
 
 footer p {
     color: #FFF;
     font-weight: 400;
-    float: right;
     padding-right: 10px;
-    font-style: italic;
-    font-size: .75em;
 }
 
 footer a {
