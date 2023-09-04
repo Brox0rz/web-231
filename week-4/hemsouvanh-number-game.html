@@ -1,0 +1,62 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <link rel="stylesheet" href="hemsouvanh-number-game.css">
+            <link rel="stylesheet" href="../global.css">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+            <title>Numbers Game</title>
+        </head>
+        <body>
+            <div id="container">
+                <h1 class="app-header">Welcome to the numbers game!</h1>
+                <div id="card-container">
+                    <div class="card">
+                        <div class="card-title">Pick a number between 1 and 10</div>
+                        <div class="card-content">
+                            <label for="txtMyNumber">Guess the number</label>
+                            <input type="text" id="txtMyNumber"><br>
+                            <button id="btnSubmit">Submit</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Results</div>
+                        <div id="card-content"></div>
+                    </div>
+                </div>
+<script>
+                /** 
+                * hemsouvanh-number-game.html
+                * Author: Brock Hemsouvanh
+                * Description: This script implements the js function to generate a random dumber between 1 and 10,
+                * and the user guesses which number it is. A hotter/colder prompt displays accordingly to guide the
+                * user in the right direction.
+                **/
+
+                // Generate a random number between 1 and 10 from https://www.w3schools.com/js/tryit.asp?filename=tryjs_random_1_10
+                const rnd = Math.floor(Math.random() * 10) + 1;
+
+const btnSubmit = document.getElementById('btnSubmit');
+btnSubmit.addEventListener('click', function() {
+    
+    const myNumber = document.getElementById('txtMyNumber').value;
+    
+    let resultMessage;
+    
+    if(myNumber > rnd) {
+        resultMessage = `The number is less than ${myNumber}`;
+    } else if(myNumber < rnd) {
+        resultMessage = `The number is greater than ${myNumber}`;
+    } else {
+        resultMessage = "Congratulations! You picked the correct number!";
+    }
+    
+    document.getElementById('card-content').innerHTML = resultMessage;
+});
+</script>
+                <footer>
+                    <p><a href="../index.html" class="return-home">Return</a></p>
+                </footer>
+            </div>
+        </body>
+    </html>
