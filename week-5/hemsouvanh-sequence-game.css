@@ -84,3 +84,8 @@ body, input[type="text"], button {
   .drop-down-menu {
     font-family: 'Oswald', 'Verdana', 'Arial', sans-serif;
   }
+
+  #results {
+    text-align: center;
+    font-size: 28px;
+}
