@@ -81,3 +81,95 @@ body, input[type="text"], button {
     font-size: 25px;
   }
   
+  /* Table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+    border: 1px solid #ddd;
+}
+
+td, th {
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #D6A800;
+    color: #4F3674;
+    cursor: pointer;
+}
+
+/* Other styles */
+.app-header {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.drop-down-menu {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+}
+
+.card-title {
+    font-weight: 500;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.return-home {
+    text-decoration: none;
+    color: #4F3674;
+}
+
+.card-content label,
+.card-content select.drop-down-menu,
+.card-content button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.drop-down-menu {
+  width: auto;
+  margin-left: 10px;
+}
+
+#booksCard .card-content,
+#authorsCard .card-content {
+  font-size: 22px;
+  padding: 15px
+}
+
+#booksCard .card-title,
+#authorsCard .card-title {
+  font-size: 22px;
+  padding: 15px
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    background-color: #4F3674;
+    color: white;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 15px;
+}

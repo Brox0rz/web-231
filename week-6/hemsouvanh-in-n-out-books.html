@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="../global.css">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
-        <title>Numbers Game</title>
+        <title>In-N-Out-Books</title>
     </head>
 <body>
     <div id="container">
@@ -14,60 +14,79 @@
             <div class="card">
                 <div class="card-title">My Favorites</div>
                 <div class="card-content">
-                    <label for="sequence">Choose a listing:</label>
-                    <select name="sequence" id="sequence" class="drop-down-menu">
-                        <option value="select">--Select--</option>
-                        <option value="favorite-books">Top 3 Favorite Books</option>
-                        <option value="favorite-authors">Top 3 Favorite Authors</option>
-                    </select>
+                    <label for="listing">Choose a listing:</label>
+                        <select name="listing" id="listing" class="drop-down-menu">
+                            <option value="select">--Select--</option>
+                            <option value="favorite-books">Top 3 Favorite Books</option>
+                            <option value="favorite-authors">Top 3 Favorite Authors</option>
+                        </select>
                     <br>
-                    <button id="btnDisplaySequence">Display Listing</button>
+                    <button id="btnDisplayListing">Display Listing</button>
                 </div>
             </div>
-            <div class="card">
+            <div id="booksCard" class="card" style="display:none;">
                 <div class="card-title">Top 3 Favorite Books</div>
+                <div id="booksResults" class="card-content"></div>
+            </div>
+            <div id="authorsCard" class="card" style="display:none;">
                 <div class="card-title">Top 3 Favorite Authors</div>
-                <div id="results" class="card-content"></div>
+                <div id="authorsResults" class="card-content"></div>
             </div>
         </div>
-<script>
-        /** 
-        * hemsouvanh-sequence-game.html
-        * Author: Brock Hemsouvanh
-        * Description: This script implements the js function to display mapped data and display it in an HTML table.
-        **/
-// Register onclick event for btnDisplaySequence
-document.getElementById('btnDisplaySequence').addEventListener('click', function() {
-  const choice = document.getElementById('sequence').value;
-  const resultsDiv = document.getElementById('results');
-  
-  if (choice === 'favorite-books') {
-    let num1 = 0, num2 = 1, next;
-    let fibonacciSequenceText = '';
-    while (num1 < 40) {
-      fibonacciSequenceText += num1 + ', ';
-      next = num1 + num2;
-      num1 = num2;
-      num2 = next;
-    }
-    resultsDiv.innerHTML = fibonacciSequenceText.slice(0, -2);
-    
-  } else if (choice === 'favorite-authors') {
-    let evenNum = 0;
-    let evenSequenceText = '';
-    do {
-      evenSequenceText += evenNum + ', ';
-      evenNum += 2;
-    } while (evenNum < 20);
-    resultsDiv.innerHTML = evenSequenceText.slice(0, -2);
-  } else {
-    alert('Invalid selection, please try again!');
-  }
-});
+        <script>
+            document.getElementById('btnDisplayListing').addEventListener('click', function() {
+                const choice = document.getElementById('listing').value;
+                
+                const booksDiv = document.getElementById('booksCard');
+                const authorsDiv = document.getElementById('authorsCard');
+                const booksResults = document.getElementById('booksResults');
+                const authorsResults = document.getElementById('authorsResults');
+                
+                if (choice === 'favorite-books') {
+                    authorsDiv.style.display = 'none';
+                    booksDiv.style.display = 'block';
 
-</script>
+                    const books = [
+                        {ISBN: '0261103571', Title: 'The Fellowship of the Ring', Pages: 432},
+                        {ISBN: '1514297272', Title: 'The Two Towers', Pages: 322},
+                        {ISBN: '1514298139', Title: 'The Return of the King', Pages: 432},
+                    ];
+                    
+                    let table = '<table><tr><th>ISBN</th><th>Title</th><th>Pages</th></tr>';
+                    books.forEach(book => {
+                        table += `<tr><td>${book.ISBN}</td><td>${book.Title}</td><td>${book.Pages}</td></tr>`;
+                    });
+                    
+                    table += '</table>';
+                    booksResults.innerHTML = table;
+                    
+                } else if (choice === 'favorite-authors') {
+                    booksDiv.style.display = 'none';
+                    authorsDiv.style.display = 'block';
+
+                    const authors = [
+                        {Name: 'Orson Scott Card', Genre: 'Science Fiction'},
+                        {Name: 'J.R.R. Tolkien', Genre: 'Fantasy'},
+                        {Name: 'Ray Dalio', Genre: 'Biography'},
+                    ];
+                    
+                    let table = '<table><tr><th>Name</th><th>Genre</th></tr>';
+                    authors.forEach(author => {
+                        table += `<tr><td>${author.Name}</td><td>${author.Genre}</td></tr>`;
+                    });
+                    
+                    table += '</table>';
+                    authorsResults.innerHTML = table;
+                    
+                } else {
+                    booksDiv.style.display = 'none';
+                    authorsDiv.style.display = 'none';
+                }
+            });
+        </script>
         <footer>
             <p><a href="../index.html" class="return-home">Return</a></p>
         </footer>
     </div>
 </body>
+</html>
