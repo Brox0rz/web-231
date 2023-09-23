@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="hemsouvanh-in-n-out-books.css">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <title>In-N-Out-Books</title>
+    </head>
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Javazon App!</h1>
+        <div id="card-container">
+            <div class="card">
+                <div class="card-title">Javazon Selection Form</div>
+                <div class="card-content">
+                    <label for="listing">Choose a listing:</label>
+                        <select name="listing" id="listing" class="drop-down-menu">
+                            <option value="select">--Select--</option>
+                            <option value="products">Products</option>
+                            <option value="services">Services</option>
+                            <option value="employees">Employees</option>
+                        </select>
+                    <br>
+                    <button id="btnDisplayListing">Display Listing</button>
+                </div>
+            </div>
+            <div id="productsCard" class="card" style="display:none;">
+                <div class="card-title">Products</div>
+                <div id="productsResults" class="card-content"></div>
+            </div>
+            <div id="servicesCard" class="card" style="display:none;">
+                <div class="card-title">Services</div>
+                <div id="servicesResults" class="card-content"></div>
+            </div>
+            <div id="employeesCard" class="card" style="display:none;">
+                <div class="card-title">Employees</div>
+                <div id="employeesResults" class="card-content"></div>
+            </div>
+        </div>
+        <script>
+            /* This JS function is designed to populate data into an HTML table grid according to the user's selection. */
+            document.getElementById('btnDisplayListing').addEventListener('click', function() {
+                const choice = document.getElementById('listing').value;                
+                const productsDiv = document.getElementById('productsCard');
+                const servicesDiv = document.getElementById('servicesCard');
+                const employeesDiv = document.getElementById('employeesCard');
+                const productsResults = document.getElementById('productsResults');
+                const servicesResults = document.getElementById('servicesResults');
+                const employeesResults = document.getElementById('employeesResults');
+                                
+                if (choice === 'products') {
+                    productsDiv.style.display = 'block';
+                    servicesDiv.style.display = 'none';
+                    employeesDiv.style.display = 'none';
+                    
+
+                    const products = [
+                        {ID: '9781118008188', Description: 'HTML and CSS: Design and Build Websites', Price: '22.26', Quantity: '10', Total Value: '222.60'},
+                        {ID: '9781491952023', Description: 'JavaScript: The Definitive Guide 7/E', Price: '41.33', Quantity: '7', Total Value: '289.31'},
+                        {ID: '9781449331818', Description: 'Learning JavaScript Design Patterns 1/E', Price: '25.99', Quantity: '3', Total Value: '77.97'},
+                        {ID: '9781617292422', Description: 'Express in Action: Writing, building, and testing Node.js applications 1/E', Price: '34.91', Quantity: '3', TValue: '104.73'},
+                        {ID: '9781491954461', Description: 'MongoDB The Definitive Guide', Price: '33.70', Quantity: '8', Total Value: '269.60'},
+                    ];
+                    
+                    let table = '<table><tr><th>ISBN</th><th>Product ID</th><th>Description</th><th>Price</th><th>Quantity</th><th>Total Value</th></tr>';
+                    products.forEach(product => {
+                        table += `<tr><td>${product.ID}</td><td>${product.Description}</td><td>${product.Price}</td><td>${product.Price}</td><td>${product.Quantity}</td><td>${product.TValue}</td></tr>`;
+                    });
+                    
+                    table += '</table>';
+                    productsResults.innerHTML = table;
+                    
+                } else if (choice === 'services') {
+                    productsDiv.style.display = 'none';
+                    employeesDiv.style.display = 'none';
+                    servicesDiv.style.display = 'block';
+
+                    const services = [
+                        {ID: '100', Description: 'Website Design', Hourly-Rate: '150.00', Minimum-Billable-Hours: '25'},
+                        {ID: '101', Description: 'DevOps Consulting', Hourly-Rate: '125.00', Minimum-Billable-Hours: '50'},
+                        {ID: '102', Description: 'Database Design', Hourly-Rate: '125.00', Minimum-Billable-Hours: '15'},
+                    ];
+                    
+                    let table = '<table><tr><th>Service ID</th><th>Description</th><th>Hourly Rate</th><th>Minimum Billable Hours</th></tr>';
+                    services.forEach(service => {
+                        table += `<tr><td>${service.ID}</td><td>${service.Description}</td><td>${service.Hourly-Rate}</td><td>${service.Minimum-Billable-Hours}</td></tr>`;
+                    });
+                    
+                    table += '</table>';
+                    servicesResults.innerHTML = table;
+
+                    const employees = [
+                        {ID: '1007', Last-Name: 'Beethoven', First-Name: 'Ludwig', Salary: '10'},
+                        {ID: '1008', Last-Name: 'Bach', First-Name: 'Johann', Salary: '22.30'},
+                        {ID: '1009', Last-Name: 'Mozart', First-Name: 'Wolfgang', Salary: '19.50'},
+                        {ID: '1010', Last-Name: 'Brahms', First-Name: 'Johannes', Salary: '12.00'},
+                        {ID: '1011', Last-Name: 'Haydn', First-Name: 'Joseph', Salary: '32.50'},
+                    ];
+                    
+                    let table = '<table><tr><th>ID</th><th>Last Name</th><th>First Name</th><th>Salary</th></tr>';
+                    employees.forEach(employee => {
+                        table += `<tr><td>${employee.ID}</td><td>${employee.Last-Name}</td><td>${employee.First-Name}</td><td>${employee.Salary}</td></tr>`;
+                    });
+                    
+                    table += '</table>';
+                    employeesResults.innerHTML = table;
+                    
+                } else if (choice === 'employees') {
+                    productsDiv.style.display = 'none';
+                    employeesDiv.style.display = 'block';
+                    servicesDiv.style.display = 'none';
+                    
+                } else {
+                    productsDiv.style.display = 'none';
+                    employeesDiv.style.display = 'none';
+                    servicesDiv.style.display = 'none';
+                }
+            });
+        </script>
+        <footer>
+            <p><a href="../index.html" class="return-home">Return</a></p>
+        </footer>
+    </div>
+</body>
+</html>
