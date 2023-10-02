@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="hemsouvanh-alphabet-game.css">
+        <link rel="stylesheet" href="../global.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <title>Alphabet Game</title>
+    </head>
+<body>
+    <div id="container">
+        <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+        <div id="card-container">
+            <div class="card">
+                <div class="card-title">Alphabet Number Form</div>
+                <div class="card-content">
+                    <label for="txtPosition">Alphabet Letter Position:</label>
+                    <input type="number" id="txtPosition" class="input">
+                    <button id="btnFindLetter">Find Letter</button>
+                </div>
+            </div>
+            <div class="alphabet-card">
+                <div class="card-title">Letters in the Alphabet</div>
+                <div class="card-content" id="alphabet"></div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Results</div>
+            <div class="card-content" id="result" style="font-size: 28px; text-align: center;"></div>
+        </div>
+<script>
+        /** 
+        * hemsouvanh-alphabet-game.html
+        * Author: Brock Hemsouvanh
+        * Description: This script implements the js function to identify which numerical position any letter in the english alphabet holds.
+        **/
+
+        
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+let alphabetOutput = "";
+
+for (let i in alphabet) {
+    alphabetOutput += alphabet[i] + ',';
+}
+
+document.getElementById('alphabet').innerText = alphabetOutput.slice(0, -1);
+
+document.getElementById('btnFindLetter').addEventListener('click', function() {
+    let pos = document.getElementById('txtPosition').value;
+    let letter = alphabet[pos - 1];
+    
+    if (letter === undefined) {
+        document.getElementById('result').innerText = `There are not ${pos} letters in the alphabet`;
+    } else {
+        document.getElementById('result').innerText = `${letter} is at position ${pos} in the alphabet`;
+    }
+});
+
+</script>
+        <footer>
+            <p><a href="../index.html" class="return-home">Return</a></p>
+        </footer>
+    </div>
+</body>
