@@ -69,7 +69,9 @@ body, input[type="text"], button, .drop-down-menu {
   
   .return-home {
     display: block;
-    text-align: center;
-    margin: 20px 0;
+    margin: 20px 2% auto 20%;
+    text-align: left;
+}
+
   }
   
