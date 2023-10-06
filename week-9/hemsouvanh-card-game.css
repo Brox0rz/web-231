@@ -22,8 +22,8 @@ body, input[type="text"], button, .drop-down-menu {
   }
   
   .card-content, #results {
-    text-align: center;
     font-size: 28px;
+    text-align: center;
     padding: 2px 16px;
     line-height: 2.5;
     margin-top: 10px;
@@ -36,9 +36,8 @@ body, input[type="text"], button, .drop-down-menu {
   
   .card {
     border: 1px solid #ccc;
-    margin: 10px 2% auto;
     padding: 10px;
-    width: 55%;
+    width: 75%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
   }
@@ -70,13 +69,15 @@ body, input[type="text"], button, .drop-down-menu {
   
   .player-card {
     text-align: left;
-    padding-left: 10px
   }
   
   #player-card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: none;
     gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
     padding: 10px;
   }
-  
+
+.playerCard .card-title {
+    text-align: left;
+}
